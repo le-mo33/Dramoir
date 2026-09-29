@@ -154,6 +154,6 @@ Status legend: **Decided** = owner chose · **Proposed** = Claude default, veto-
 | Spike | Result | Consequence |
 |---|---|---|
 | (a) Resolving 25 pin.it links — **owner's PC** (2026-09-29) | 25/25 (100%). 24 at `/originals/` size; 1 (*Buried hearts*) got 403 on originals and succeeded at the 736px fallback | The PC fallback path works; the resolver must always try both sizes |
-| (a) Resolving 25 pin.it links — **GitHub Actions runner** | — (run `Spike - Pinterest from GitHub` once the repo exists) | If under 80% succeed, running the image job from the owner's PC becomes the primary path |
+| (a) Resolving 25 pin.it links — **GitHub Actions runner** (2026-09-29) | 25/25 (100%) | Not blocked: the image job runs on GitHub Actions as planned (D9); the owner's PC stays a fallback only |
 | (b) Reading the live Google Sheet with the service account | — | |
 | (c) Supabase Auth email through Gmail SMTP | — | |
