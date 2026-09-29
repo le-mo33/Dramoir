@@ -1,0 +1,80 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* Dramoir brand tokens — see docs/ARCHITECTURE.md §3.
+   mauve-text (#6f4f58) is the AA-safe shade for small text on blush (D38);
+   mauve (#7d5c65) is for large text and decoration only. */
+@theme inline {
+  --color-offwhite: #f5f5f5;
+  --color-aubergine: #230612;
+  --color-blush: #e8d9e0;
+  --color-mauve: #7d5c65;
+  --color-mauve-text: #6f4f58;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-dm-sans);
+  --font-serif: var(--font-cormorant);
+  --font-heading: var(--font-dm-sans);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: #e8d9e0;
+  --foreground: #230612;
+  --card: #f5f5f5;
+  --card-foreground: #230612;
+  --popover: #230612;
+  --popover-foreground: #f5f5f5;
+  --primary: #230612;
+  --primary-foreground: #f5f5f5;
+  --secondary: #f5f5f5;
+  --secondary-foreground: #230612;
+  --muted: #f5f5f5;
+  --muted-foreground: #6f4f58;
+  --accent: #7d5c65;
+  --accent-foreground: #f5f5f5;
+  --destructive: #b3261e;
+  --border: #7d5c65;
+  --input: #7d5c65;
+  --ring: #7d5c65;
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button:not(:disabled), [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  html {
+    @apply font-sans;
+  }
+}

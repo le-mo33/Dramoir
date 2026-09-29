@@ -1,0 +1,21 @@
+# S0 spike (a): does Pinterest let a GitHub-hosted runner resolve pin.it links? Run manually from the Actions tab.
+name: Spike - Pinterest from GitHub
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: Number of poster links to test
+        default: "25"
+
+jobs:
+  spike:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm tsx scripts/spike-pinterest.ts docs/inputs/Dramoir.xlsx ${{ inputs.count }}
